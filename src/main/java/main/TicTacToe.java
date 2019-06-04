@@ -5,22 +5,54 @@ import java.util.*;
 public class TicTacToe{
 public static int[][] ticbox;
 	public static int win(int [][]tic) {
+		
 		//check all rows
 		//loop through rows from 0 to 3 and check if all the 3 places have same marks
- 		
 		
-		//check all cols
-		//loop through columns from 0 to 3 and check if all the 3 places have same marks
- 		
-		//check both diagonals 
+		for(int i = 0; i < 3; i++)
+		{
+			if(tic[i][0] == 1 && tic[i][1] == 1 && tic[i][2] == 1)
+			{
+				return 1;
+			}
+			if(tic[i][0] == 2 && tic[i][1] == 2 && tic[i][2] == 2)
+			{
+				return 2;
+			}
+		}
 		
+		for(int j = 0; j< 3; j++)
+		{
+			if(tic[0][j] == 1 && tic[1][j] == 1 && tic[2][j] == 1)
+			{
+				return 1;
+			}
+			if(tic[0][j] == 2 && tic[1][j] == 2 && tic[2][j] == 2)
+			{
+				return 2;
+			}
+		}
 		
-		
-		//write your code here !!!
-		
-		
+		if(tic[0][0] == 1 && tic[1][1] == 1 && tic[2][2] == 1)
+		{
+			return 1;
+		}
+		if(tic[0][0] == 2 && tic[1][1] == 2 && tic[2][2] == 2)
+		{
+			return 2;
+		}
+		if(tic[0][2] == 1 && tic[1][1] == 1 && tic[2][0] == 1)
+		{
+			return 1;
+		}
+		if(tic[0][2] == 2 && tic[1][1] == 2 && tic[2][0] == 2)
+		{
+			return 2;
+		}
 		
 		return 0;
+		
+		
 		
 	}
 	
@@ -37,12 +69,24 @@ public static int[][] ticbox;
 		//check if a2 is between 0 & 3
 		//check if the selected box is empty ie, already not marked by other player
 		//if all checks passed return true.
-		
-		
+			
+		boolean valid = false;
+		final int EMPTY = 0;
+		//ArrayList<Integer> al = new ArrayList<Integer>();
+		if(a1 >= 0 && a1 < 3)
+		{
+			if(a1 >= 0 && a1 < 3)
+			{
+				if(tic[a1][a2] == 0)
+				{
+					valid = true;
+				}
+			}
+		}
 		//Write your code here !!!
 		
 		
-		return false;
+		return valid;
 	}
 	public static void main(String args[]) {
 		
